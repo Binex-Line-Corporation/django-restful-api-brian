@@ -1,0 +1,8 @@
+rest_api/db.sqlite3
+rest_api/manage.py
+rest_api/rest_api/__init__.py
+rest_api/rest_api/settings.py
+rest_api/rest_api/__pycache__
+rest_api/books/__pycache__/*
+rest_api/books/migrations
+.vscode/*
