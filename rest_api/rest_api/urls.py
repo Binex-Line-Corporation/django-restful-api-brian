@@ -21,15 +21,15 @@ from rest_framework import routers, permissions
 from drf_yasg import views
 from drf_yasg import openapi
 
-import books.api
+import stocks.api
 
 schema_view = views.get_schema_view(openapi.Info(title="Snippets API", default_version='v1', description="Test description", terms_of_service="https://www.google.com/policies/terms/", contact=openapi.Contact(email="contact@snippets.local"), license=openapi.License(name="BSD License"),), public=True, permission_classes=[permissions.AllowAny],)
 
 
-app_name='books'
+app_name='stocks'
 
 router = routers.DefaultRouter()
-router.register('books', books.api.BooksViewSet)
+router.register('books', stocks.api.BooksViewSet)
 
 
 urlpatterns = [
