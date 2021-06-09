@@ -1,12 +1,12 @@
-from .models import books
+from .models import stocks
 from rest_framework import serializers, viewsets
 
-class BooksSerializer(serializers.ModelSerializer):
+class StocksSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model=books
+        model=stocks
         fields='__all__'
 
-class BooksViewSet(viewsets.ModelViewSet):
-    queryset = books.objects.all()
-    serializer_class = BooksSerializer
+class StocksViewSet(viewsets.ModelViewSet):
+    queryset = stocks.objects.all()
+    serializer_class = StocksSerializer

@@ -29,7 +29,7 @@ schema_view = views.get_schema_view(openapi.Info(title="Snippets API", default_v
 app_name='stocks'
 
 router = routers.DefaultRouter()
-router.register('books', stocks.api.BooksViewSet)
+router.register('stocks', stocks.api.StocksViewSet)
 
 
 urlpatterns = [
@@ -37,5 +37,5 @@ urlpatterns = [
     url(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     url(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path('admin/', admin.site.urls),
-    path('api/v1/', include((router.urls, 'books'), namespace='api')),
+    path('api/v1/', include((router.urls, 'stocks'), namespace='api')),
 ]
