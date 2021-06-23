@@ -21,15 +21,15 @@ from rest_framework import routers, permissions
 from drf_yasg import views
 from drf_yasg import openapi
 
-import books.api
+import stocks.api
 
 schema_view = views.get_schema_view(openapi.Info(title="Snippets API", default_version='v1', description="Test description", terms_of_service="https://www.google.com/policies/terms/", contact=openapi.Contact(email="contact@snippets.local"), license=openapi.License(name="BSD License"),), public=True, permission_classes=[permissions.AllowAny],)
 
 
-app_name='books'
+app_name='stocks'
 
 router = routers.DefaultRouter()
-router.register('books', books.api.BooksViewSet)
+router.register('stocks', stocks.api.StocksViewSet)
 
 
 urlpatterns = [
@@ -37,5 +37,5 @@ urlpatterns = [
     url(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     url(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path('admin/', admin.site.urls),
-    path('api/v1/', include((router.urls, 'books'), namespace='api')),
+    path('api/v1/', include((router.urls, 'stocks'), namespace='api')),
 ]
