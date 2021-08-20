@@ -21,6 +21,6 @@ Practice project to make a RESTful API server using django.
 4. Start the Django project using the django-admin.py script. Here, "rest_api" is the project name.
 
    ```
-   PS C:\...\django-restful-api-brian> python .\venv\Scripts\django-admin.py startproject rest_api
+   PS C:\...\django-restful-api-brian> django-admin startproject rest_api
    ```
    
