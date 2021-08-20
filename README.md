@@ -11,6 +11,8 @@ Practice project to make a RESTful API server using django.
 
    ```
    PS C:\Users\Brian Choi\Documents\Projects\API\django-restful-api-brian> python -m venv venv
+   ```
+   ```
    PS C:\...\django-restful-api-brian> .\venv\Scripts\activate
    ```
 
@@ -18,6 +20,8 @@ Practice project to make a RESTful API server using django.
 
    ```
    PS C:\...\django-restful-api-brian> pip install django
+   ```
+   ```
    PS C:\...\django-restful-api-brian> pip install djangorestframework
    ```
    
@@ -88,5 +92,7 @@ Practice project to make a RESTful API server using django.
 
    ```
    PS C:\...\django-restful-api-brian> python .\rest_api\manage.py makemigrations stocks
+   ```
+   ```
    PS C:\...\django-restful-api-brian> python .\rest_api\manage.py migrate stocks
    ```
