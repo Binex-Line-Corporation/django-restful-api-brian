@@ -1,6 +1,7 @@
 # django-restful-api-brian
 Practice project to make a RESTful API server using django.
 
+---
 
 # Setup Guide
 #### The following sections are a step-by-step guide for the setup of this API server on a Windows machine:
@@ -46,6 +47,7 @@ Practice project to make a RESTful API server using django.
 1. Install [MariaDB Server](https://mariadb.org/download/). At time of writing, MariaDB Server 10.6.4. During setup, take note of the root password and port number.
 2. Open the HeidiSQL application that got installed along with MariaDB and use the root password mentioned above to open a connection to the MariaDB server.
 3. Create a new database in the server and take note of the database name. The name will be used to identify the database in the settings.py file.
+
 
 ## Use MySQL DB in Django Project
 1. Edit the default dictionary in the DATABASES dictionary in settings.py to have the following entries:
@@ -102,3 +104,55 @@ Practice project to make a RESTful API server using django.
    ```
    PS C:\...\django-restful-api-brian> python .\rest_api\manage.py migrate stocks
    ```
+
+
+## Setup Basic API
+1. Create a file named api.py in the stocks folder and paste the following code.
+
+   ``` Python
+   from .models import stocks
+   from rest_framework import serializers, viewsets
+
+   class StocksSerializer(serializers.ModelSerializer):
+
+      class Meta:
+         model=stocks
+         fields='__all__'
+
+   class StocksViewSet(viewsets.ModelViewSet):
+      queryset = stocks.objects.all()
+      serializer_class = StocksSerializer
+   ```
+   
+   The StocksViewSet class will be used in conjunction with Django's REST framework to display entries in the stocks table with all fields visible.
+   
+2. Add the following imports in urls.py.
+
+   ``` Python
+   from django.conf.urls import url, include
+   from rest_framework import routers, permissions
+   
+   import stocks.api
+   ```
+   
+3. Register the stocks app, the folder created in step 2 of the previous section, in the Django project.
+
+   ``` Python
+   app_name='stocks'
+   router = routers.DefaultRouter()
+   router.register('stocks', stocks.api.StocksViewSet)
+   ```
+   
+4. Add the api urlpattern to the urlpatterns list.
+
+   ``` Python
+   urlpatterns = [
+      path('admin/', admin.site.urls),
+      path('api/v1/', include((router.urls, 'stocks'), namespace='api')),
+   ]
+
+
+
+This concludes the setup guide for now.
+
+---
