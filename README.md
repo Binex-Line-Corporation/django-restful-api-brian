@@ -2,7 +2,10 @@
 Practice project to make a RESTful API server using django.
 
 
-#### The following section is a step-by-step guide for the setup of this API server on a Windows machine:
+# Setup Guide
+#### The following sections are a step-by-step guide for the setup of this API server on a Windows machine:
+
+## Start Django Project
 1. Install [Python](https://www.python.org/downloads/).
 2. Navigate to the project folder in a terminal, create a virtual environment, and activate it.
 
