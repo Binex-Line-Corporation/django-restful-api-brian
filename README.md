@@ -88,7 +88,13 @@ Practice project to make a RESTful API server using django.
       closing_price = models.FloatField()
    ```
    
-5. Through the terminal, generate the migration code to update the database and then apply the migration.
+5. Install mysqlclient to interact with the MySQL DB.
+
+   ```
+   PS C:\...\django-restful-api-brian> pip install mysqlclient
+   ```
+
+6. Through the terminal, generate the migration code to update the database and then apply the migration.
 
    ```
    PS C:\...\django-restful-api-brian> python .\rest_api\manage.py makemigrations stocks
