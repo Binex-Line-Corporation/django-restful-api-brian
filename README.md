@@ -20,16 +20,16 @@ Practice project to make a RESTful API server using django.
 3. Install Django and the REST API framework for Django.
 
    ```
-   PS C:\...\django-restful-api-brian> pip install django
+   (venv) PS C:\...\django-restful-api-brian> pip install django
    ```
    ```
-   PS C:\...\django-restful-api-brian> pip install djangorestframework
+   (venv) PS C:\...\django-restful-api-brian> pip install djangorestframework
    ```
    
 4. Start the Django project using the django-admin.py script. Here, "rest_api" is the project name.
 
    ```
-   PS C:\...\django-restful-api-brian> django-admin startproject rest_api
+   (venv) PS C:\...\django-restful-api-brian> django-admin startproject rest_api
    ```
    
 5. Add "rest_framework" in the list of installed apps in settings.py.
@@ -93,16 +93,16 @@ Practice project to make a RESTful API server using django.
 5. Install mysqlclient to interact with the MySQL DB.
 
    ```
-   PS C:\...\django-restful-api-brian> pip install mysqlclient
+   (venv) PS C:\...\django-restful-api-brian> pip install mysqlclient
    ```
 
 6. Through the terminal, generate the migration code to update the database and then apply the migration.
 
    ```
-   PS C:\...\django-restful-api-brian> python .\rest_api\manage.py makemigrations stocks
+   (venv) PS C:\...\django-restful-api-brian> python .\rest_api\manage.py makemigrations stocks
    ```
    ```
-   PS C:\...\django-restful-api-brian> python .\rest_api\manage.py migrate stocks
+   (venv) PS C:\...\django-restful-api-brian> python .\rest_api\manage.py migrate stocks
    ```
 
 
