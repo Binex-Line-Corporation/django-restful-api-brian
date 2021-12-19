@@ -130,7 +130,7 @@ Practice project to make a RESTful API server using django.
 
    ``` Python
    from django.urls import path, include
-   from rest_framework import routers, permissions
+   from rest_framework import routers
    
    import stocks.api
    ```
