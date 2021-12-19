@@ -7,7 +7,7 @@ Practice project to make a RESTful API server using django.
 #### The following sections are a step-by-step guide for the setup of this API server on a Windows machine:
 
 ## Start Django Project
-1. Install [Python](https://www.python.org/downloads/). At time of writing, Python 3.9.6.
+1. Install [Python](https://www.python.org/downloads/). At time of writing, Python 3.10.1.
 2. Navigate to the project folder in a terminal, create a virtual environment, and activate it.
 
    ```
@@ -17,7 +17,7 @@ Practice project to make a RESTful API server using django.
    PS C:\...\django-restful-api-brian> .\venv\Scripts\activate
    ```
 
-3. Install Django and the REST API framework for Django.
+3. Install Django and the REST API framework for Django. At the time of writing, Django 4.0.
 
    ```
    (venv) PS C:\...\django-restful-api-brian> pip install django
@@ -44,7 +44,7 @@ Practice project to make a RESTful API server using django.
    
    
 ## Setup MySQL DB
-1. Install [MariaDB Server](https://mariadb.org/download/). At time of writing, MariaDB Server 10.6.4. During setup, take note of the root password and port number.
+1. Install [MariaDB Server](https://mariadb.org/download/). At time of writing, MariaDB Server 10.6.5. During setup, take note of the root password and port number.
 2. Open the HeidiSQL application that got installed along with MariaDB and use the root password mentioned above to open a connection to the MariaDB server.
 3. Create a new database in the server and take note of the database name. The name will be used to identify the database in the settings.py file.
 
@@ -126,16 +126,16 @@ Practice project to make a RESTful API server using django.
    
    The StocksViewSet class will be used in conjunction with Django's REST framework to display entries in the stocks table with all fields visible.
    
-2. Add the following imports in urls.py.
+2. Add the following import statements in urls.py.
 
    ``` Python
-   from django.conf.urls import url, include
+   from django.urls import path, include
    from rest_framework import routers, permissions
    
    import stocks.api
    ```
    
-3. Register the stocks app, the folder created in step 2 of the previous section, in the Django project.
+3. Register the stocks app in urls.py, the folder created in step 2 of the previous section.
 
    ``` Python
    app_name='stocks'
@@ -153,6 +153,16 @@ Practice project to make a RESTful API server using django.
 
 
 
-This concludes the setup guide for now.
+## Start the API Server
+1. Run the following command in project terminal. This will start the server at http://127.0.0.1:8000/. 
 
+   ```
+   (venv) PS C:\...\django-restful-api-brian> python .\rest_api\manage.py runserver
+   ```
+
+2. You can navigate the site using the url patterns established in step 4 above. For example, access the page for stocks at http://127.0.0.1:8000/api/v1/stocks.
+
+
+
+This concludes the setup guide for now.
 ---
